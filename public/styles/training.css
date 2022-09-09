@@ -1,9 +1,9 @@
 /**
 ==============================================
-; Title: Assignment 4.2 pets-r-us
+; Title: Assignment 5.2 pets-r-us
 ; Author: Chad ONeal
-; Date: 08/31/2022
-; Description: CSS for pets-r-us grooming page
+; Date: 09/09/2022
+; Description: CSS for pets-r-us boarding page
 ==============================================
 */
 
@@ -36,7 +36,6 @@ header h3 {
     padding-top: 1%;
     margin-top: .5%;
     font-weight: normal;
-    
 }
 
 /**
@@ -93,8 +92,11 @@ header h3 {
 }    
 
 .company-info p {
-    font-size: 35px;
-    margin-top: 5%;
+    font-size: 19px;
+    margin-top: -.5%;
+    padding: 1%;
+    margin-right: 1%;
+    text-align: center;
 }
 
 /**
@@ -145,15 +147,33 @@ img {
    margin-top:-2%;
 }
 
+
+
 /**
 *stylings for the grooming services prices
 */
 .pricing-info ul li {
     list-style: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
     padding: 8px;
 }
+
+.pricing-info h3 {
+    font-size: 35px;
+    font-weight: normal;
+}
+
+.pricing-info img {
+    float: right;
+}
+
+.pricing-info p {
+    font-size: 22px;
+    text-align: justify;
+    padding-left: 3%;
+}
+
 
 /**
 *stylings for the contact card
@@ -166,7 +186,7 @@ img {
 }
 
 .contact form {
-    padding-top: 2%;
+    padding-top: 1%;
     margin-left: 1%;    
 }
 

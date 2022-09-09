@@ -1,0 +1,150 @@
+<!--
+==============================================
+; Title: Assignment 4.2 pets-r-us
+; Author: Chad ONeal
+; Date: 09/09/2022
+; Resource: Resource: https://www.youtube.com/watch?v=lYVKbAn5Od0
+; Description: Grooming page HTML for pets-r-us
+==============================================
+-->
+        
+        
+<!DOCTYPE html>
+        
+<html lang="en-US">
+        
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+        <!--google fonts, gstatic fonts, cdn icons style sheets -->
+        <link href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+               
+        <!--title of page-->
+        <title>Training Page</title>
+            
+        
+            <!--css stylesheet-->
+            <link rel="stylesheet" href="styles/training.css">
+    
+    </head>
+    
+<!--body of page-->    
+    <body>
+        <a name="top"></a>  
+
+    <!--imports headers from partials-->
+    <%- include('./partials/_header_3.html') %> 
+    
+<!--main content section, must be here or footer will not display properly-->    
+<main>
+        
+        <!--card for nav links and images-->
+        <section class="company-info">
+            
+            <div class="card">           
+                <div class="nav">
+                
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="grooming">Grooming</a>  
+                    <a href="boarding">Training</a>
+                    <a href="booking">Book an Appointment</a>
+                    <a href="my-appointments">My Appointments</a>                    
+                </nav>
+    
+                </div>
+            </div>
+    
+            <!--second horizontal rule-->
+            <hr class="second">
+                
+            <div class="images">
+    
+                <img src="images/obstacle.jpg" alt="Dog running obstacle course">
+                <img src="images/glasses.jpg" alt="Dog wearing glasses">
+                <img src="images/hoop.jpg" alt="Dog jumping through hoop">
+                
+            </div>
+        
+        <!--grooming services prices card and info-->
+        <section class="pricing-info">
+    
+            <div class="card">                
+                <h3>Training Services</h3>
+                <hr class="third">
+                <p>Pets-R-Us is the leading pet service provider, offering professional
+                    dog training services. As an industry leading pet service 
+                    provider, we offer the most complete training programs that are tailored to
+                    suit each customer's specific needs and requirements. Pets-R-Us has an expert
+                    team of potty trained dogs that function as protection dogs for high profile
+                    families, as a service dog for handicapped individuals, and as a comfort dog 
+                    for nursing home residents. We pride ourselves in delivering efficient, reliable
+                    and 100% exceptional service which is presented by our experienced dog trainers.
+                </p>
+    
+            </div>
+        </section>
+
+        <!--grooming services prices card and info-->
+        <section class="pricing-info">
+    
+            <div class="card">                
+                <h3>Training Services Prices</h3>
+                <hr class="third">
+                <ul>
+                    <li>Puppy Training $35 per hour</li> |
+                    <li>Obedience Training $45 per hour<li>  |
+                    <li>Comfort Dog Training $55 per hour</li>  | <br>
+                    <li>Service Dog Training $75 per hour</li>  |
+                    <li>Protection Dog Training $100 per hour</li>  | <br>
+                </ul>
+    
+            </div>
+        </section>
+
+        <!--grooming services prices card and info-->
+        <section class="pricing-info">
+    
+            <div class="card">                
+                <h3>Meet Brad, Our Trainer</h3>
+                <hr class="third">
+                <img src="images/brad.jpg" alt="Brad the Trainer">
+                <p>Brad is our premier dog trainer for Pets-R-Us. He works with families
+                    and pets to improve their relationship and give the entire family
+                    happier lives. Brad could be your trainer for puppy training, obedience training,
+                    as well as protection, comfort, or service dog training.
+                </p>
+    
+        </section>
+    
+        <br><br>   
+         <!--card for contact info-->   
+        <section class="contact">
+            <div class="card1"> 
+            <form>
+                <input type="email" placeholder="enter email address">
+                <a href="#top">Contact Us</a><br>
+                <p>Phone: 865-227-4641</p>
+            </form>
+            </div>
+        </section>
+    
+        
+    
+    </main>
+    
+        <br><br>
+    
+        
+    <!--imports footer from partials-->
+    <%- include('./partials/_footer.html') %>
+            
+               
+</body>     
+        
+</html>

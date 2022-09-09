@@ -29,17 +29,16 @@
         
     
         <!--css stylesheet-->
-        <link rel="stylesheet" href="../public/styles/grooming.css">
+        <link rel="stylesheet" href="styles/grooming.css">
 
     </head>
 
 <!--body of page-->    
 <body>
-    <a name="top"></a>    
-    <header>
-        <p>Pets-R-Us - Grooming</p>
-        <hr class="first">
-    </header>
+    <a name="top"></a>   
+
+    <!--imports headers from partials-->
+    <%- include('./partials/_header_1.html') %> 
 
 <!--main content section, must be here or footer will not display properly-->    
 <main>
@@ -51,8 +50,8 @@
             <div class="nav">
             
             <nav>
-                <a href="index.html">Home</a>
-                <a href="boarding.html">Boarding</a>  
+                <a href="/">Home</a>
+                <a href="boarding">Boarding</a>  
                 <a href="training">Training</a>
                 <a href="booking">Book an Appointment</a>
                 <a href="my-appointments">My Appointments</a>                    
@@ -66,13 +65,13 @@
             
         <div class="images">
 
-            <img src="../public/images/goat.jpg" alt="Goat getting haircut">
-            <img src="../public/images/towel.jpg" alt="Dog in towel">
-            <img src="../public/images/shower.jpg" alt="Dog in shower">
+            <img src="images/goat.jpg" alt="Goat getting haircut">
+            <img src="images/towel.jpg" alt="Dog in towel">
+            <img src="images/shower.jpg" alt="Dog in shower">
             
         </div>
     
-    <!--gromming services prices card and info-->
+    <!--grooming services prices card and info-->
     <section class="pricing-info">
 
         <div class="card">                
@@ -109,11 +108,8 @@
 
     <br><br>
 
-    <!--footer-->
-    <footer>   
-        <p>&#169; Wicked Robot Designs 2022</p> 
-        
-    </footer>
+    <!--imports footer from partials-->
+    <%- include('./partials/_footer.html') %>
         
            
 </body>     

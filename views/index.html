@@ -16,39 +16,34 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="landing">
-        
+                
         <!--google fonts, gstatic fonts, cdn icons style sheets -->
         <link href="https://fonts.gstatic.com" rel="preconnect">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <!--css stylesheet-->
+    <link rel="stylesheet" href="styles/site.css">
+
     <!--title of page-->
-    <title>Landing Page</title>
+    <title><%- title %></title>
     
-
-    <!--css stylesheet-->
-    <link rel="stylesheet" href="../public/styles/site.css">
-
     </head>
 
 <!--body of page with anchor for back to top-->
 <body>
     <a name="top"></a>
-
-    <header>    
-        <p>Pets-R-Us</p>
-    <hr>
-    </header>
-        
+     
+    <!--imports headers from partials-->
+    <%- include('./partials/_header.html') %>        
         
 <!--div for company info and nav-->                
 <section class="company-info">
     <div class="card">                
         <div class="nav">
         <nav>
-            <a href="boarding.html">Boarding</a> 
-            <a href="grooming.html">Grooming</a> 
+            <a href="boarding">Boarding</a> 
+            <a href="grooming">Grooming</a> 
             <a href="training">Training</a>
             <a href="booking">Book an Appointment</a>
             <a href="my-appointments">My Appointments</a>                    
@@ -78,7 +73,7 @@
         <p>Dog of the Week</p><br><br>
             <li>Name: Neyland</li><br><br>
                 <li>Favorite Toy: Tennis Ball</li><br>
-                <img src="../public/images/Neyland.jpg" alt="Neyland">      
+                <img src="images/Neyland.jpg" alt="Neyland">      
         </div>
     </div>   
 
@@ -141,11 +136,8 @@
         </form>
     </section>
 
-    <!--footer-->
-    <footer>   
-        <p>&#169; Wicked Robot Designs 2022</p> 
-        
-    </footer>
+    <!--imports footer from partials-->
+    <%- include('./partials/_footer.html') %>
     
 </body> 
 

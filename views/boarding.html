@@ -1,0 +1,137 @@
+<!--
+==============================================
+; Title: Assignment 4.2 pets-r-us
+; Author: Chad ONeal
+; Date: 09/09/2022
+; Resource: Resource: https://www.youtube.com/watch?v=lYVKbAn5Od0
+; Description: Boarding page HTML for pets-r-us
+==============================================
+-->
+        
+        
+<!DOCTYPE html>
+        
+<html lang="en-US">
+        
+<head>
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="grooming">
+    
+        <!--google fonts, gstatic fonts, cdn icons style sheets -->
+        <link href="https://fonts.gstatic.com" rel="preconnect">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+               
+        <!--title of page-->
+        <title>Boarding Page</title>
+            
+        
+            <!--css stylesheet-->
+            <link rel="stylesheet" href="styles/boarding.css">
+    
+        </head>
+    
+<!--body of page-->    
+<body>
+    <a name="top"></a>    
+        
+         
+    <!--imports headers from partials-->
+    <%- include('./partials/_header_2.html') %> 
+    
+<!--main content section, must be here or footer will not display properly-->    
+<main>
+        
+    <!--card for nav links and images-->
+    <section class="company-info">
+            
+        <div class="card">           
+            <div class="nav">
+                
+            <nav>
+                <a href="/">Home</a>
+                <a href="grooming">Grooming</a>  
+                <a href="training">Training</a>
+                <a href="booking">Book an Appointment</a>
+                <a href="my-appointments">My Appointments</a>                    
+            </nav>
+
+            </div>
+        </div>
+    
+<!--second horizontal rule-->
+    <hr class="second">
+                
+        <div class="images">
+    
+            <img src="images/frisbee.jpg" alt="Dog catching frisbee">
+            <img src="images/sleeping.jpg" alt="Dog sleeping towel">
+            <img src="images/chicken.jpg" alt="Dog carrying toy chicken shower">
+                
+        </div>
+        
+    <!--grooming services prices card and info-->
+        <section class="pricing-info">
+    
+            <div class="card">                
+                <h3>Boarding Services</h3>
+                <hr class="third">
+                <p>Pets R-Us new and unique dog boarding services are tailored especially for the needs
+                    of your beloved pets. Our services include grooming and training, as well
+                    as care that is specifically customized to the needs of your dog. Relaxing
+                    dog boarding services will provide stress free, comfortable lodging for your
+                    dogs while you take a break from their constant companionship and enjoy some
+                    time to yourself.
+                </p>
+    
+            </div>
+        </section>
+
+        <!--grooming services prices card and info-->
+        <section class="pricing-info">
+    
+            <div class="card">                
+                <h3>Boarding Prices</h3>
+                <hr class="third">
+                <ul>
+                    <li>1 Dog $70 per night</li> |
+                    <li>2 Dogs (or more) $60 per night<li>  |
+                    <li>Doggie Daycare (Full Day) $25 per dog</li>  | <br>
+                    <li>Doggie Daycare (Half Day) $12 per dog</li>  |
+                    <li>Luxury Stay (5 day minimum) $550</li>  | <br>
+                    <li>VIP Stay</li>  |
+                    <li><span style="color: #AD330B">*must be a member of Pets-R-Us</span></li>|
+                    <li><span style="color: #AD330B">*please call for pricing</span></li>
+                </ul>
+    
+            </div>
+        </section>
+    
+        <br><br>   
+         <!--card for contact info-->   
+        <section class="contact">
+            <div class="card1"> 
+            <form>
+                <input type="email" placeholder="enter email address">
+                <a href="#top">Contact Us</a><br>
+                <p>Phone: 865-227-4641</p>
+            </form>
+            </div>
+        </section>
+    
+        
+    
+</main>
+    
+        <br><br>
+    
+    <!--imports footer from partials-->
+    <%- include('./partials/_footer.html') %>
+            
+               
+</body>     
+        
+</html>
