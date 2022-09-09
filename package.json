@@ -1,0 +1,27 @@
+{
+  "name": "pets-r-us",
+  "version": "1.0.0",
+  "description": "<h1>pets-r-us</h1>\r <h2>Contributors</>\r   <ul>\r   <li>Chad ONeal</li>\r   <li>Richard Krasso</li>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chad1515/pets-r-us.git"
+  },
+  "author": "Chad ONeal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chad1515/pets-r-us/issues"
+  },
+  "homepage": "https://github.com/Chad1515/pets-r-us#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

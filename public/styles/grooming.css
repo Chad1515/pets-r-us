@@ -1,0 +1,226 @@
+/**
+==============================================
+; Title: Assignment 4.2 pets-r-us
+; Author: Chad ONeal
+; Date: 08/31/2022
+; Description: CSS for pets-r-us grooming page
+==============================================
+*/
+
+/**
+*stylings for body
+*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    background-color: #E6450F;
+}
+
+/**
+*stylings for header
+*/
+header {
+    height: 180px;
+    background-color: #E2A865;
+    border: 1px solid black;
+    left: 0;
+
+    
+}
+
+header p {
+    font-size: 50px;
+    text-align: center;
+    margin-left: -2%;
+    padding-top: 1%;
+    margin-top: .5%;
+    
+}
+
+/**
+*stylings for nav links
+*/ 
+.nav {
+    float: center;
+    padding-top: 3%;
+    
+     
+}
+
+.nav a {
+    color: #AD330B;
+    font-size: 21px;
+    text-decoration: none;
+    padding: 3%
+}
+
+/**
+*stylings for call cards on the page
+*/
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    transition: .3s;
+    background-color: #F5855F;
+    height: 250px;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.card-content {
+    padding: 2px 16px;
+    text-align: center;   
+    
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+    
+}
+
+
+.company-info {
+    text-align: center;
+    margin-top: -2%;
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    width: 55%;
+    margin-left: 22%;    
+}    
+
+.company-info p {
+    font-size: 35px;
+    margin-top: 5%;
+}
+
+/**
+*stylings for the 3 images on page
+*/
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 5px 75px 0 0;
+    margin-left: 8%;  
+    
+}
+
+.images {
+    display: inline;    
+}
+
+/**
+*stylings for the 3 horizontal rules on the page
+*/
+.first {
+   height: 1px;
+   background-color: #0e0d0d;
+   border: none;
+   width: 85.5%;
+   margin-left: 7.5%;
+   margin-top: -1.5%;
+      
+}
+
+.second {
+    height: 1px;
+   background-color: #0e0d0d;
+   border: none;
+   width: 85.5%;
+   margin-left: 7.5%;
+   margin-top: -17%;
+}
+
+.third {
+   height: 1px;
+   background-color: #0e0d0d;
+   border: none;
+   width: 85.5%;
+   margin-left: 7.5%;
+   margin-top:-2%;
+}
+
+/**
+*stylings for the grooming services prices
+*/
+.pricing-info ul li {
+    list-style: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 8px;
+}
+
+/**
+*stylings for the contact card
+*/
+.contact {
+    height: 25px;
+    text-align: center; 
+    font-size: 25px;
+    padding-bottom: 7%;     
+}
+
+.contact form {
+    padding-top: 2%;
+    margin-left: 1%;    
+}
+
+.contact form a {
+    color: #AD330B;
+}
+
+.contact form p {
+    color: #AD330B;
+    font-size: 25px;
+    margin-top: 1%;
+}
+
+.card1 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    transition: .3s;
+    background-color: #F5855F;
+    height: 105px;
+}
+
+.card-title1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.card-content1 {
+    text-align: center;
+    margin-top: -1%;   
+    
+}
+
+.card:hover1 {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+    
+}
+
+
+/**
+*stylings for the footer
+*/
+
+footer {
+    background-color: #E2A865;
+    bottom: 0;
+    left: 0;
+    height: 55px;
+    padding: 1%;    
+    
+        
+}
+
+footer p {
+    text-align: center;
+    font-size: 25px;
+    margin-top: .5%;
+    margin-left:-2%;
+}
