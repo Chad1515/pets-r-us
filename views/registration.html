@@ -1,0 +1,119 @@
+<!--
+    ==============================================
+    ; Title: Assignment 4.2 pets-r-us
+    ; Author: Chad ONeal
+    ; Date: 09/09/2022
+    ; Resource: Resource: https://www.youtube.com/watch?v=lYVKbAn5Od0
+    ; Description: Boarding page HTML for pets-r-us
+    ==============================================
+    -->
+            
+            
+    <!DOCTYPE html>
+            
+    <html lang="en-US">
+            
+    <head>
+            
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="registration">
+        
+            <!--google fonts, gstatic fonts, cdn icons style sheets -->
+            <link href="https://fonts.gstatic.com" rel="preconnect">
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        
+                   
+            <!--title of page-->
+            <title><%- title %></title>
+                
+            
+                <!--css stylesheet-->
+                <link rel="stylesheet" href="styles/boarding.css">
+        
+            </head>
+        
+    <!--body of page-->    
+    <body>
+        <a name="top"></a>    
+            
+             
+        <!--imports headers from partials-->
+        <%- include('./partials/_header_4.html') %> 
+        
+    <!--main content section, must be here or footer will not display properly-->    
+    <main>
+            
+        <!--card for nav links and images-->
+        <section class="company-info">
+                
+            <div class="card">           
+                <div class="nav">
+                    
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="boarding">Boarding</a> 
+                    <a href="grooming">Grooming</a>  
+                    <a href="training">Training</a>
+                    <a href="booking">Booking</a>
+                    <a href="my-appointments">My Appointments</a>
+                    <a href="customer">Customer List</a>                      
+                </nav>
+    
+                </div>
+            </div>
+        
+    <!--second horizontal rule-->
+        <hr class="second">
+                    
+            <div class="images">
+        
+                <img src="images/happy.jpg" alt="Happy Dog">
+                <img src="images/pug.jpg" alt="Pug posing for camera">
+                <img src="images/thank-you.jpg" alt="Dog holding thank you card">
+                    
+            </div>
+
+            <br><br><br><br><br>
+
+            
+        <!--grooming services prices card and info-->
+            <section class="pricing-info">
+        
+                <div class="card">
+                    <p>Registration Form</p><br>  
+
+                    <hr class="third">
+
+                    <div class="form">
+                        <form action="/customer" method="post">
+                            <div class="form-field">
+                                <label for="email"><b>Email</b></label><br>
+                                <input class="input" type="text" name="email" id="email" required>
+                            </div><br>
+        
+                            <div class="form-field">
+                                <label for="email"><b>Customer Id</b></label><br />
+                                <input class="input" type="text" name="customerID" id="customerID" required>
+                            </div><br>
+        
+                            <button type="btn">Register</button>
+                    </div>
+                    
+                    
+                </div>
+                    
+            <br><br>   
+                    
+    </main>
+        
+            <br><br><br><br><br><br><br>
+        
+        <!--imports footer from partials-->
+        <%- include('./partials/_footer.html') %>
+                
+                   
+    </body>     
+            
+    </html>
