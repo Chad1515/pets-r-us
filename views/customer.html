@@ -1,0 +1,140 @@
+<!--
+    ==============================================
+    ; Title: Assignment 4.2 pets-r-us
+    ; Author: Chad ONeal
+    ; Date: 09/21/2022
+    ; Description: Customer List page HTML for pets-r-us
+    ==============================================
+    -->
+        
+        
+<!DOCTYPE html>
+        
+    <html lang="en-US">
+        
+        <head>
+        
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="keywords" content="customer-list">
+    
+            <!--google fonts, gstatic fonts, cdn icons style sheets -->
+            <link href="https://fonts.gstatic.com" rel="preconnect">
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+               
+        <!--title of page-->
+        <title><%- title %></title>
+        
+            <!--css stylesheet-->
+            <link rel="stylesheet" href="styles/customer-list.css">
+    
+        </head>
+    
+    <!--body of page-->    
+    <body>
+        <a name="top"></a>   
+    
+        <!--imports headers from partials-->
+        <%- include('./partials/_header_5.html') %>
+    
+    <!--main content section, must be here or footer will not display properly-->    
+    <main>
+        
+        <!--card for nav links and images-->
+        <section class="company-info">
+            
+            <div class="card">           
+                <div class="nav">
+                
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="registration">Register</a>
+                    <a href="boarding">Boarding</a>
+                    <a href="grooming">Grooming</a>   
+                    <a href="training">Training</a>
+                    <a href="booking">Booking</a>
+                    <a href="my-appointments">My Appointments</a>
+                </nav>
+    
+                </div>
+            </div>
+    
+            <!--second horizontal rule-->
+            <hr class="second">
+                
+            <div class="images">
+    
+                <img src="images/happy-man.jpg" alt="Happy Man">
+                <img src="images/smile.jpg" alt="Woman smiling">
+                <img src="images/girl-dog.jpg" alt="Girl holding a dog">
+                
+            </div>
+        
+        <!--table and card for customer list-->
+        <section class="table">
+    
+            <div class="card2">                
+                <p>Customer List</p>
+                <hr class="third">  
+
+                <section> 
+
+                    <div id="customers"> 
+                        <% if(customers.length > 0) { %> 
+                        <table> 
+                            <tr> 
+                                <th>Email</th><br> 
+                                <th>Customer ID</th> 
+                            </tr> 
+                            <tbody> 
+                            <% customers.forEach(function(customer) { %> 
+                            <tr> 
+                                <td> 
+                                    <%= customers.email %> 
+                                </td> 
+                                <td> 
+                                    <%= customers.customerID %> 
+                                </td> 
+                           </tr> 
+                            <% }) %> 
+                            </tbody> 
+                        </table> 
+                        <% } else { %> 
+                            <h2>Customers have not been added to database.  Add some to MongoDB now!</h3> 
+                        <% } %>                     
+                    </div> 
+                </section> 
+
+                
+                
+        </section>
+
+
+    
+        <br>   
+         <!--card for contact info-->   
+        <section class="contact">
+            <div class="card1"> 
+            <form>
+                <input type="email" placeholder="enter email address">
+                <a href="#top">Contact Us</a><br>
+                <p>Phone: 865-227-4641</p>
+            </form>
+            </div>
+        </section>
+    
+        
+    
+    </main>
+    
+        <br><br>
+    
+        <!--imports footer from partials-->
+        <%- include('./partials/_footer.html') %>
+            
+               
+    </body>     
+        
+    </html>

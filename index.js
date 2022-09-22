@@ -110,6 +110,21 @@ console.log(newCustomer);
 	});
 });
 
+// gets info from mongo and displays in customer list page
+app.get('/customer', (req, res) => {
+    Customer.find({}, function(err, customers)  {
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            res.render('customer', {
+                title: 'Customer List',
+                customers: customers
+            })
+        }
+    })
+})
+
 
 
 
