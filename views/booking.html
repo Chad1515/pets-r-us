@@ -1,0 +1,165 @@
+<!--
+    ==============================================
+    ; Title: Assignment 4.2 pets-r-us
+    ; Author: Chad ONeal
+    ; Date: 09/21/2022
+    ; Description: Booking page HTML for pets-r-us
+    ==============================================
+    -->
+        
+        
+<!DOCTYPE html>
+        
+    <html lang="en-US">
+        
+        <head>
+        
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="keywords" content="booking">
+    
+            <!--google fonts, gstatic fonts, cdn icons style sheets -->
+            <link href="https://fonts.gstatic.com" rel="preconnect">
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+               
+        <!--title of page-->
+        <title><%- title %></title>
+        
+            <!--css stylesheet-->
+            <link rel="stylesheet" href="styles/booking.css">
+    
+        </head>
+    
+    <!--body of page-->    
+    <body>
+        <a name="top"></a>   
+    
+        <!--imports headers from partials-->
+        <%- include('./partials/_header_6.html') %>
+    
+    <!--main content section, must be here or footer will not display properly-->    
+    <main>
+        
+        <!--card for nav links and images-->
+        <section class="company-info">
+            
+            <div class="card">           
+                <div class="nav">
+                
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="registration">Register</a>
+                    <a href="boarding">Boarding</a>
+                    <a href="grooming">Grooming</a>   
+                    <a href="training">Training</a>
+                    <a href="customer">Customer List</a>
+                    <a href="my-appointments">My Appointments</a>
+                </nav>
+    
+                </div>
+            </div>
+    
+            <!--second horizontal rule-->
+            <hr class="second">
+                
+            <div class="images">
+    
+                <img src="images/flower.jpg" alt="Dog holding flower">
+                <img src="images/boxer.jpg" alt="Woman smiling">
+                <img src="images/yellow.jpg" alt="Dog with yellow flower">
+                
+            </div>
+        
+        <!--form inputs and card for booking-->
+        <section>
+    
+            <div class="card2">                
+                <p>Book an Appointment</p>
+                <hr class="third">  
+
+                <!--form inputs that post to MongoDB-->
+                <div class="form">
+                    <form action="/appointments" method="post">
+    
+                    <div class="grid-container">
+
+                        <!--fist name form-->
+                        <div class="form-field">
+                            <label for="firstName">First Name</label><br>
+                            <input type="text" class="input" name="firstName" id="firstName" required>
+                        </div>
+
+                        <!--last name form-->
+                        <div class="form-field">
+                            <label for="lastName">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;Last Name</label><br>
+                            <input type="text" class="input" name="lastName" id="lastName" required>
+                        </div>
+
+                        <!--user name form-->
+                        <div class="form-field">
+                            <label for="userName">User Name</label><br>
+                            <input type="text" class="input" name="userName" id="userName" required>
+                        </div>
+                        
+                        <!--email form-->
+                        <div class="form-field">
+                            <label for="email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;Email</label><br>
+                            <input type="email" class="input" name="email" id="email" required>
+                        </div>
+                    </div>
+
+                </div><br>
+    
+                <!--services drop-down menu-->
+                <div class="form-field">
+                    <label-1 for="service">Service</label-1><br>
+                    <select name="service" id="service" class="drop-down-menu full-width" required>
+                        <% services.forEach((service) => { %>
+                        <option value="'<%= service.value %>'"><%= service.text %></option>
+                        <% }) %>
+                    </select>
+                </div>
+    
+                <!--button to submit form information to mongoDB-->
+                <div class="button">
+                    <input type="submit" value="Book Appointment" class="btn">
+                </div>
+            </form>
+            
+            </div> 
+
+            </div>             
+                
+        </section>
+
+
+    
+        <br>   
+         <!--card for contact info-->   
+        <section class="contact">
+            <div class="card1"> 
+            <form>
+                <input type="email" placeholder="enter email address">
+                <a href="#top">Contact Us</a><br>
+                <p>Phone: 865-227-4641</p>
+            </form>
+            </div>
+        </section>
+    
+        
+    
+    </main>
+    
+        <br><br>
+    
+        <!--imports footer from partials-->
+        <%- include('./partials/_footer.html') %>
+            
+               
+    </body>     
+        
+    </html>

@@ -15,8 +15,10 @@ const app = express();
 const path = require('path');
 
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 const Customer = require('./models/customer');
+const Appointment = require('./models/appointments');
  
 //render HTML w/ EJS
 app.engine('html', require('ejs').__express);
@@ -125,6 +127,41 @@ app.get('/customer', (req, res) => {
     })
 })
 
+// sends booking page
+app.get('/booking', (req, res) => {
+	let jsonFile = fs.readFileSync('./public/data/services.json');
+	let services = JSON.parse(jsonFile);
+
+	console.log(services);
+
+	res.render('booking', {
+		title: 'Booking',
+		services: services,
+	})
+});
+
+//posts customer appointment information to mongo DB
+app.post('/appointments', (req, res, next) => {
+	const newAppointment = new Appointment({
+		userName: req.body.userName,
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		email: req.body.email,
+		service: req.body.service,
+	})
+
+	//creates customer appointment and takes back to home page
+	Appointment.create(newAppointment, function(err, order) {
+		if (err) {
+			console.log(err);
+			next(err);
+		} else {
+			res.render('index', {
+				title: 'Home',
+			})
+		}
+	})
+})
 
 
 
