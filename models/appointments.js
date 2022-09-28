@@ -1,3 +1,12 @@
+/**
+==============================================
+; Title: Assignment 8.2 pets-r-us
+; Author: Chad ONeal
+; Date: 09/28/2022
+; Description: appointments.js model
+==============================================
+*/
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
