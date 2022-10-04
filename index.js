@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 
 const Customer = require('./models/customer');
-const Appointment = require('./models/appointments');
+const Appointments = require('./models/appointments');
  
 //render HTML w/ EJS
 app.engine('html', require('ejs').__express);
