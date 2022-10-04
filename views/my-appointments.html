@@ -55,7 +55,7 @@
                     <a href="grooming">Grooming</a>   
                     <a href="training">Training</a>
                     <a href="customer">Customer List</a>
-                    <a href="my-appointments">My Appointments</a>
+                    <a href="booking">Booking</a>
                 </nav>
     
                 </div>
@@ -82,42 +82,41 @@
                 <div class="form">
 
                     <div class="form-field">
-                      <label for="email">Email</label><br />
-                      <input type="text" class="input" name="email" id="email" required>
+                        <label for="email">email</label><br />
+                        <input type="text" class="input" name="email" id="email" required>
                     </div>
-            
-                    <!--button to -->
-                <div class="button">
-                    <input type="submit" value="Search" class="btn">
-                </div>
-            
-                <script>
-
-                    document.getElementById('search').onclick = function() {
-                      const firstName = document.getElementById('lastName').value;
-                  
-                      fetch('/api/appointments/' + firstName)
-                              .then(res => res.json())
-                              .then(data => {
-                                let tableString = `<h3>My Appointments</h3><table id="Appointments" 
-                                style="width: 100%;" class="table"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
-                  
-                                for (let appointment of data) {
-                                  tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>
-                                    ${appointment.service</td></tr>`;
-                                }
-                  
-                                tableString += `</table>`;
-                  
-                                document.getElementById('orders').innerHTML = tableString;
-                              });
-                    }
-                  
-                  </script>
-
-        </section>
-
     
+                    <div class="form-field">
+                        <input type="submit" value="Search" id="search" class="btn">
+                    </div>
+    
+                <div id="appointments"></div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+    
+        document.getElementById('search').onclick = function() {
+            const email = document.getElementById('email').value;
+    
+            fetch('/api/appointments/' + email)
+                .then(res => res.json())
+                .then(data => {
+                    let tableString = `<br /><br /><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px;">
+                        My Appointments</h4><table id="appointments" class="table"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
+    
+                    for (let appointment of data) {
+                        tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
+                    }
+    
+                    tableString += `</table>`;
+    
+                    document.getElementById('appointments').innerHTML = tableString;
+                });
+        }
+    
+    </script>
             
     </main>
     
