@@ -18,7 +18,7 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 
 const Customer = require('./models/customer');
-const Appointment = require('./models/appointments');
+const Appointments = require('./models/appointments');
  
 //render HTML w/ EJS
 app.engine('html', require('ejs').__express);
@@ -161,6 +161,23 @@ app.post('/appointments', (req, res, next) => {
 			})
 		}
 	})
+})
+
+app.get('/my-appointments', (req, res) => {
+    res.render('my-appointments', {
+        title: 'My Appointments',
+    })
+})
+
+app.get('/api/appointments/:lastName', async(req, res, next) => {
+    Order.find({'lastName': req.params.lastName}, function(err, orders) {
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            res.json(appointments);
+        }
+    })
 })
 
 

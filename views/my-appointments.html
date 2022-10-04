@@ -1,0 +1,133 @@
+<!--
+    ==============================================
+    ; Title: Assignment 4.2 pets-r-us
+    ; Author: Chad ONeal
+    ; Date: 09/21/2022
+    ; Description: appointments page HTML for pets-r-us
+    ==============================================
+    -->
+        
+        
+<!DOCTYPE html>
+        
+    <html lang="en-US">
+        
+        <head>
+        
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="keywords" content="appointments">
+    
+            <!--google fonts, gstatic fonts, cdn icons style sheets -->
+            <link href="https://fonts.gstatic.com" rel="preconnect">
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+               
+        <!--title of page-->
+        <title><%- title %></title>
+        
+            <!--css stylesheet-->
+            <link rel="stylesheet" href="styles/my-appointments.css">
+    
+        </head>
+    
+    <!--body of page-->    
+    <body>
+        <a name="top"></a>   
+    
+        <!--imports headers from partials-->
+        <%- include('./partials/_header_7.html') %>
+    
+    <!--main content section, must be here or footer will not display properly-->    
+    <main>
+        
+        <!--card for nav links and images-->
+        <section class="company-info">
+            
+            <div class="card">           
+                <div class="nav">
+                
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="registration">Register</a>
+                    <a href="boarding">Boarding</a>
+                    <a href="grooming">Grooming</a>   
+                    <a href="training">Training</a>
+                    <a href="customer">Customer List</a>
+                    <a href="my-appointments">My Appointments</a>
+                </nav>
+    
+                </div>
+            </div>
+    
+            <!--second horizontal rule-->
+            <hr class="second">
+                
+            <div class="images">
+    
+                <img src="images/flower.jpg" alt="Dog holding flower">
+                <img src="images/boxer.jpg" alt="Woman smiling">
+                <img src="images/yellow.jpg" alt="Dog with yellow flower">
+                
+            </div>
+        
+        <!--form inputs and card for appointments-->
+        <section>
+    
+            <div class="card2">                
+                <p>My Appointments</p>
+                <hr class="third">  
+
+                <div class="form">
+
+                    <div class="form-field">
+                      <label for="email">Email</label><br />
+                      <input type="text" class="input" name="email" id="email" required>
+                    </div>
+            
+                    <!--button to -->
+                <div class="button">
+                    <input type="submit" value="Search" class="btn">
+                </div>
+            
+                <script>
+
+                    document.getElementById('search').onclick = function() {
+                      const firstName = document.getElementById('lastName').value;
+                  
+                      fetch('/api/appointments/' + firstName)
+                              .then(res => res.json())
+                              .then(data => {
+                                let tableString = `<br /><h4 style="font-size: 32px; text-align: center; 
+                                padding-bottom: 10px; font-weight: lighter">My Appointments</h4><table id="Appointments" 
+                                style="width: 100%;" class="table"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
+                  
+                                for (let appointment of data) {
+                                  tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>
+                                    ${appointment.service</td></tr>`;
+                                }
+                  
+                                tableString += `</table>`;
+                  
+                                document.getElementById('orders').innerHTML = tableString;
+                              });
+                    }
+                  
+                  </script>
+
+        </section>
+
+    
+            
+    </main>
+    
+        <br><br>
+    
+        <!--imports footer from partials-->
+        <%- include('./partials/_footer.html') %>
+            
+               
+    </body>     
+        
+    </html>
