@@ -163,6 +163,24 @@ app.post('/appointments', (req, res, next) => {
 	})
 })
 
+//trying to display appointments on my appointment page
+app.get('/my-appointments', (req, res) => {
+    res.render('my-appointments', {
+        title: 'My Appointments',
+    })
+})
+
+app.get('/api/appointments/:lastName', async(req, res, next) => {
+    Order.find({'lastName': req.params.lastName}, function(err, orders) {
+        if (err) {
+            console.log(err);
+            next(err);
+        } else {
+            res.json(Appointment);
+        }
+    })
+})
+
 
 
 //port declared & message to console that the app has started
