@@ -178,7 +178,6 @@ app.get('/api/appointments/:email', async(req, res, next) => {
             console.log(err);
             next(err);
         } else {
-            // Respond with the appointments documents instead of the Appointment model
             res.json(appointments);
         }
     })
