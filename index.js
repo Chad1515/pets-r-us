@@ -163,24 +163,26 @@ app.post('/appointments', (req, res, next) => {
 	})
 })
 
-//trying to display appointments on my appointment page
+
+//sends my-appointment page
 app.get('/my-appointments', (req, res) => {
     res.render('my-appointments', {
         title: 'My Appointments',
     })
 })
 
+//gets info from mongo DB and displays in table on my-appointments page
 app.get('/api/appointments/:email', async(req, res, next) => {
     Appointment.find({'email': req.params.email}, function(err, appointments) {
         if (err) {
             console.log(err);
             next(err);
         } else {
-            res.json(Appointment);
+            // Respond with the appointments documents instead of the Appointment model
+            res.json(appointments);
         }
     })
 })
-
 
 
 //port declared & message to console that the app has started

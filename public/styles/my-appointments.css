@@ -269,6 +269,47 @@ label-1 {
     
 }
 
+#appointments {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin-left: 15%;
+}
+
+th {
+    text-align: center;
+    background-color: #E2A865; 
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-weight: normal;
+}
+
+tr {
+    background-color: #fff;
+    
+}
+
+tbody {
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 5%;
+}
+
+td, th{
+    border: 1px solid rgb(7, 7, 7);
+    padding: 7px;
+    
+}
+
+tr:hover {
+    background-color: #E6450F;    
+    cursor: pointer;
+}
+
 
 /**
 *stylings for the footer

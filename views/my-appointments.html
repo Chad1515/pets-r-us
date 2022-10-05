@@ -103,8 +103,7 @@
             fetch('/api/appointments/' + email)
                 .then(res => res.json())
                 .then(data => {
-                    let tableString = `<br /><br /><h4 style="font-size: 32px; text-align: center; padding-bottom: 10px;">
-                        My Appointments</h4><table id="appointments" class="table"><tr><th>First name</th><th>Last name</th><th>Email</th><th>Service</th></tr>`;
+                    let tableString = `<h3>My Appointments</h3><table id="appointments" class="table"><tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Service</th></tr>`;
     
                     for (let appointment of data) {
                         tableString += `<tr><td>${appointment.firstName}</td><td>${appointment.lastName}</td><td>${appointment.email}</td><td>${appointment.service}</td></tr>`;
